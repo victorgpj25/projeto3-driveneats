@@ -22,121 +22,103 @@
     <main>
         <h3>Primeiro, seu prato</h3>
         <section class="main">
-            <figure>
+            <figure onclick="selectMain(this)">
                 <img src="images/frango_yin_yang 1.png" >
-                <h4>Frango Yin Yang</h4>
-                <h5>Um pouco de batata, um pouco de salada</h5>
-                <h6>R$ 14,90</h6>
+                <dish>Frango Yin Yang</dish>
+                <description>Um pouco de batata, um pouco de salada</description>
+                <price>R$ 14,90</price>
             </figure>
 
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
+            <figure onclick="selectMain(this)">
+                <img src="images/contra_file.jpg" >
+                <dish>Contra Filé</dish>
+                <description>Um pouco de batata, um pouco de salada</description>
+                <price>R$ 19,90</price>
             </figure>
 
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
-            </figure>
-
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
-            </figure>
-
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
+            <figure onclick="selectMain(this)">
+                <img src="images/strogonoff.jpg" >
+                <dish>Strogonoff de Frango</dish>
+                <description>Um pouco de batata palha e arroz de acompanhamento</description>
+                <price>R$ 16,90</price>
             </figure>
         </section>
 
         <h3>Agora, sua bebida</h3>
         <section class="drink">
-            <figure>
+            <figure onclick="selectDrink(this)">
                 <img src="images/coquinha_gelada 1.png" >
-                <h4>Coquinha gelada</h4>
-                <h5>Lata 350ml</h5>
-                <h6>R$ 4,90</h6>
+                <dish>Coquinha gelada</dish>
+                <description>Lata 350ml</description>
+                <price>R$ 4,90</price>
             </figure>
 
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
+            <figure onclick="selectDrink(this)">
+                <img src="images/dolly.jpg" >
+                <dish>Dolly</dish>
+                <description>Garrafa 350ml</description>
+                <price>R$ 2,90</price>
             </figure>
 
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
-            </figure>
-
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
-            </figure>
-            
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
+            <figure onclick="selectDrink(this)">
+                <img src="images/del_valle.png" >
+                <dish>Del Valle</dish>
+                <description>Lata 350ml</description>
+                <price>R$ 5,90</price>
             </figure>
         </section>
         
         <h3>Por fim, sua sobremesa</h3>
         <section class="dessert">
-            <figure>
+            <figure onclick="selectDessert(this)">
                 <img src="images/pudim 1.png" >
-                <h4>Pudim</h4>
-                <h5>Apenas pudim</h5>
-                <h6>R$ 7,90</h6>
+                <dish>Pudim</dish>
+                <description>Pudim, apenas!</description>
+                <price>R$ 7,90</price>
             </figure>
 
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
+            <figure onclick="selectDessert(this)">
+                <img src="images/mousse.png" >
+                <dish>Mousse</dish>
+                <description>Maracujá, morango ou limão</description>
+                <price>R$ 6,90</price>
             </figure>
 
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
-            </figure>
-
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
-            </figure>
-            
-            <figure>
-                <img src="images/" >
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
+            <figure onclick="selectDessert(this)">
+                <img src="images/tortinha.jpg" >
+                <dish>Tortinha</dish>
+                <description>Maçã ou banana</description>
+                <price>R$ 5,90</price>
             </figure>
         </section>
     </main>
     <footer>
-        <button disabled id="order">Selecione os 3 itens <br> para fechar o pedido</button>
+        <button class="open" disabled onclick="openConfirmationScreen()">Selecione os 3 itens <br> para fechar o pedido</button>
     </footer>
+
+    <confirmationScreen class="hidden">
+        <confirmationPopup>
+            <confirmationsTitle class="confirmation w700">Confirme seu Pedido</confirmationsTitle>
+            <confirmationList>
+                <mainName class="confirmation"></mainName>
+                <mainPrice class="confirmation"></mainPrice>
+            </confirmationList>
+            <confirmationList>
+                <drinkName class="confirmation"></drinkName>
+                <drinkPrice class="confirmation"></drinkPrice>
+            </confirmationList>
+            <confirmationList>
+                <dessertName class="confirmation"></dessertName>
+                <dessertPrice class="confirmation"></dessertPrice>
+            </confirmationList>
+            <confirmationOverall>
+                <confirmationsTotal class="confirmation w700">TOTAL</confirmationsTotal>
+                <confirmationsTotalPrice class="confirmation w700"></confirmationsTotalPrice>
+            </confirmationOverall>
+            <button class="finish" onclick="finish()">Tudo certo, pode pedir!</button>
+            <button class="close" onclick="closeConfirmationScreen()">Cancelar</button>
+        </confirmationPopup>
+    </confirmationScreen>
 
     <script src="script.js"></script>
 </body>

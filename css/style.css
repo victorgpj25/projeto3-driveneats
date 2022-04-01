@@ -4,6 +4,7 @@
 img {
     width: 144px;
     height: 87px;
+    border-radius: 9px;
 }
 body {
     width: 100%;
@@ -39,28 +40,28 @@ h3 {
 
     color: #333333;
 }
-h4 {
+dish {
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     
     color: #333333;
 }
-h5 {
+description {
     font-weight: 300;
     font-size: 15px;
     line-height: 18px;
     
     color: #A6A6A6;
 }
-h6 {
+price {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     
     color: #000000;
 }
-h4, h5 {
+price, description {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -72,6 +73,7 @@ header {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 1;
 
     background-color: #CF2B2B;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -83,6 +85,7 @@ main {
 }
 section {
     width: auto;
+    padding-bottom: 10px;
     display: flex;
     overflow-x: scroll;
 }
@@ -106,6 +109,9 @@ figure {
     border-radius: 9px;
     background-color: #FFFFFF;
 }
+.selected {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+}
 footer {
     width: 100%;
     height: 92px;
@@ -116,11 +122,12 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 0 25px 0 25px;
+    z-index: 1;
 
     border-top: 1px solid #f5f6f7;
     background-color: #FFFFFF; 
 }
-button {
+.open {
     width: 364px;
     height: 61px;
     border: 0;
@@ -131,7 +138,7 @@ button {
 
     color: #FFFFFF
 }
-button:disabled {
+.open:disabled {
     background-color: #CBCBCB;
 
     font-weight: 400;
@@ -139,11 +146,106 @@ button:disabled {
     line-height: 23px;
     letter-spacing: 0.018em;
 }
-button:enabled {
+.open:enabled {
     background-color: #32B72F;
 
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
     letter-spacing: 0.018em;
+}
+confirmationScreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding: 0 20px 0 20px;
+    display: flex;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.hidden {
+    display: none;
+}
+confirmationPopup {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 9px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    padding: 21px 25px 0 25px;
+
+    background-color: #50D074;
+}
+.disableScroll {
+    overflow: hidden;
+}
+figure:hover {
+    cursor: pointer;
+}
+button:hover {
+    cursor: pointer;
+}
+.confirmation {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    
+    color: #FFFFFF;
+}
+.w700 {
+    font-weight: 700;
+}
+confirmationList, confirmationOverall {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+confirmationsTitle {
+    margin-bottom: 28px;
+}
+confirmationList {
+    margin-bottom: 13px;
+}
+confirmationOverall {
+    margin-bottom: 24px;
+}
+.finish {
+    height: 52px;
+    width: 100%;
+    border-radius: 100px;
+    border: 0;
+
+    background-color: #FFFFFF;
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.018em;
+    
+    color: #50D074;
+}
+.close {
+    height: 52px;
+    width: 100%;
+    border: 0;
+
+    background-color: #50D074;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.018em;
+    
+    color: #FFFFFF;
 }
