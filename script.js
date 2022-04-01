@@ -76,5 +76,5 @@ function finish() {
     let clientAdress = prompt("Insira seu endereço")
     let message = `Olá, gostaria de fazer o pedido:%0A- Prato: ${document.querySelector(".main > .selected > dish").innerHTML}%0A- Bebida: ${document.querySelector(".drink > .selected > dish").innerHTML}%0A- Sobremesa: ${document.querySelector(".dessert > .selected > dish").innerHTML}%0ATotal: R$ ${(Number(document.querySelector(".main > .selected > price").innerHTML.slice(3).replace(",", ".")) + Number(document.querySelector(".drink > .selected > price").innerHTML.slice(3).replace(",", ".")) + Number(document.querySelector(".dessert > .selected > price").innerHTML.slice(3).replace(",", "."))).toFixed(2)}%0A%0ANome: ${clientName}%0AEndereço: ${clientAdress}`
     window.open(`https://wa.me/?text=${message}`, '_blank').focus();
-    closeConfirmationScreen();
+    window.location.reload()
 }
