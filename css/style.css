@@ -187,7 +187,7 @@ confirmationPopup {
 figure:hover {
     cursor: pointer;
 }
-button:hover {
+button:enabled:hover {
     cursor: pointer;
 }
 .confirmation {
